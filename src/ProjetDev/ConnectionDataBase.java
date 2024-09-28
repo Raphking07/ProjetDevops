@@ -26,6 +26,7 @@ public class ConnectionDataBase{
                 
                 
         	if (resultset.next()) {
+        		//
         	int idetudiant = resultset.getInt("idetudiant");
     			String matetudiant = resultset.getString("matetudiant");
         			String firstName = resultset.getString("nometudiant");

@@ -39,26 +39,26 @@ public class  JavaApp extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
         label = new Label("ENTRER VOTRE MATRICULE SVP!:");
-        label1 = new Label();
-        label2 = new Label();
-        inputField = new TextField();
-        button = new Button("VALIDER");
-        button2 = new Button("DETAILS");
-        button1 = new Button("FERMER");
-        layout2 = new HBox();
-        layout = new VBox();
+        label1 = new Label(); // recevoir decision
+        label2 = new Label(); // recevoir infos
+        inputField = new TextField();// zone de saisir
+        button = new Button("VALIDER");// bouton submit
+        button2 = new Button("DETAILS");// bouton details
+        button1 = new Button("FERMER");// bouton fermer
+        layout2 = new HBox();// Horizontal box pour les boutons
+        layout = new VBox();// fenetre
        
 
-        // Action on button click (example: print input to console)
+        // Action du bouton submit
         button.setOnAction(event -> {
-           /* String name = inputField.getText();*/
+           //recuperer le texte
         	 
         	Connection(inputField.getText());
         	
         		
         });
         
-        
+        //fermer l'application
         button1.setOnAction(event -> {
         	
         	primaryStage.close();
@@ -67,7 +67,7 @@ public class  JavaApp extends Application {
        
        
         
-        // Create a layout to organize elements
+        // fenetre pour organiser les elements
         
         layout.getChildren().addAll(label, inputField, layout2, label1, label2);
         layout2.getChildren().addAll(button,button2,button1);
@@ -76,10 +76,10 @@ public class  JavaApp extends Application {
         layout.setSpacing(50);
         layout2.setSpacing(20);
 
-        // Create a scene and set its content                 
+        // Creer une scene pour la fenetre                 
         Scene scene = new Scene(layout, 400, 600);
 
-        // Set the scene and title for the stage
+        // nom de la fenetre
         primaryStage.setScene(scene);
         primaryStage.setTitle("Fenetre Application");
         primaryStage.show();
@@ -109,6 +109,7 @@ public class  JavaApp extends Application {
         			String decision = resultset.getString("decisionetudiant");
         			Double moyentudiant = resultset.getDouble("moyetudiant");
         			
+        			//verifier si le matricule saisi est egale au matricule de la base de donnée
         			if(matricule.equals(matetudiant)){
         				
         				label1.setText(decision);
@@ -116,7 +117,7 @@ public class  JavaApp extends Application {
         				
         			}
         			
-        		
+        		    //action du bouton details
         			button2.setOnAction(event -> {
         	        	
         				label2.setText( "Numero : " + idetudiant +"\n"+ "Matricule : " + matetudiant +"\n"+ "Nom : " + firstName +"\n"+"Prenoms : " + lastName +"\n"+ "Date de naissance : " +datenaiss +"\n"+"Nom ecole : " + nomecole +"\n"+"Decision : " + decision +"\n"+"Moyenne : " + moyentudiant +"\n");
@@ -125,6 +126,7 @@ public class  JavaApp extends Application {
         	        	
         			
         			}
+        	// en cas d'erreur de connexion
                 
             } else {
                 System.out.println("Échec de la connexion.");
