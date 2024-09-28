@@ -46,14 +46,15 @@ public class  JavaApp extends Application {
         button2 = new Button("DETAILS");
         button1 = new Button("FERMER");
         layout2 = new HBox();
-         layout = new VBox();
-        
+        layout = new VBox();
+       
 
         // Action on button click (example: print input to console)
         button.setOnAction(event -> {
            /* String name = inputField.getText();*/
         	 
         	Connection(inputField.getText());
+        	
         		
         });
         
@@ -69,12 +70,13 @@ public class  JavaApp extends Application {
         // Create a layout to organize elements
         
         layout.getChildren().addAll(label, inputField, layout2, label1, label2);
-        layout2.getChildren().addAll(button,button1,button2);
+        layout2.getChildren().addAll(button,button2,button1);
         layout.setAlignment(Pos.CENTER);
-        layout.setSpacing(10);
-        layout2.setSpacing(10);
+        layout2.setAlignment(Pos.CENTER);
+        layout.setSpacing(50);
+        layout2.setSpacing(20);
 
-        // Create a scene and set its content
+        // Create a scene and set its content                 
         Scene scene = new Scene(layout, 400, 600);
 
         // Set the scene and title for the stage
@@ -121,10 +123,6 @@ public class  JavaApp extends Application {
         	        	
         	        });
         	        	
-        				
-        			
-        			
-        			
         			
         			}
                 
