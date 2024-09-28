@@ -1,5 +1,6 @@
 package ProjetDev;
 
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -39,7 +40,7 @@ public class  JavaApp extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
         label = new Label("ENTRER VOTRE MATRICULE SVP!:");
-        label1 = new Label(); // recevoir decision
+        label1 = new Label(); // recevoir decision de l'etudiant
         label2 = new Label(); // recevoir infos
         inputField = new TextField();// zone de saisir
         button = new Button("VALIDER");// bouton submit
@@ -48,6 +49,7 @@ public class  JavaApp extends Application {
         layout2 = new HBox();// Horizontal box pour les boutons
         layout = new VBox();// fenetre
        
+        
 
         // Action du bouton submit
         button.setOnAction(event -> {
@@ -69,7 +71,7 @@ public class  JavaApp extends Application {
         
         // fenetre pour organiser les elements
         
-        layout.getChildren().addAll(label, inputField, layout2, label1, label2);
+        layout.getChildren().addAll(label, inputField,label1,layout2, label2);
         layout2.getChildren().addAll(button,button2,button1);
         layout.setAlignment(Pos.CENTER);
         layout2.setAlignment(Pos.CENTER);

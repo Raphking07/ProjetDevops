@@ -26,7 +26,7 @@ public class ConnectionDataBase{
                 
                 
         	if (resultset.next()) {
-        		//
+        		//recuperation des éléments de la base de donnée
         	int idetudiant = resultset.getInt("idetudiant");
     			String matetudiant = resultset.getString("matetudiant");
         			String firstName = resultset.getString("nometudiant");
