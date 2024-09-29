@@ -16,6 +16,7 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
+
 public class  JavaApp extends Application {
 	static String url = "jdbc:mysql://ls-0f19f4268096a452a869b6f8467bc299c51da519.cz6cgwgke8xd.eu-west-3.rds.amazonaws.com:3306/db0072838"; // URL de connexion
 	static String utilisateur = "user0072838"; // Remplacez par votre nom d'utilisateur
@@ -80,7 +81,9 @@ public class  JavaApp extends Application {
 
         // Creer une scene pour la fenetre                 
         Scene scene = new Scene(layout, 400, 600);
-
+        
+        
+        
         // nom de la fenetre
         primaryStage.setScene(scene);
         primaryStage.setTitle("Fenetre Application");

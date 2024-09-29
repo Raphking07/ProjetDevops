@@ -9,6 +9,6 @@ module ProjetDevops {
 	requires javafx.swing;
 	requires javafx.web;
 	requires java.desktop;
-	
-	
+	requires org.junit.jupiter.api;
+    requires org.assertj.core ;
 }

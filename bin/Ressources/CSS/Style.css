@@ -1,5 +1,16 @@
-.button{
-
-
-
+.button:hover {
+    
+    -fx-background-color: linear-gradient(to bottom, #4CAF50, #388E3C); /* Dégradé vert */
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-padding: 10px 20px; /* Espacement interne */
+    -fx-border-radius: 5px; /* Coins arrondis */
+    
 }
+
+.text-field {
+    -fx-background-color: white;
+    -fx-border-color: lightgray;
+    -fx-border-radius: 3px;
+}
+
